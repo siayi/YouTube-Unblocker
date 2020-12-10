@@ -17,6 +17,7 @@ function search() {
     }
   };
 
+  document.getElementById('results-area').innerHTML = 'Loading results...';
   showWindow();
   xhttp.open("GET", "./search?q=" + t, true);
   xhttp.send();
