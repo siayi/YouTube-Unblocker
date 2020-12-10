@@ -17,7 +17,7 @@ app.get('/video', function(req, res){
 
 app.get('/search', function(req, res) {
   try {
-    const searchResults = ytsr(req.query.q, {limit: 10}).then(r => res.send(r));
+    const searchResults = ytsr(req.query.q, {limit: 20}).then(r => res.send(r));
   } catch {
     res.status(437).end()
   }
