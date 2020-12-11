@@ -32,7 +32,7 @@ function showResults(result) {
   for (let key in result.items) {
     if (result.items[key].type != 'video') continue;
 
-    resultsHTML += `<a href="${window.location.href + '/?ref=' + result.items[key].link}">
+    resultsHTML += `<a href="${window.location.href + '?ref=' + result.items[key].link}">
       <div class='yt-result'>
 
       <div class="result-text">
@@ -66,7 +66,7 @@ document.body.onload = function () {
   const urlParams = new URLSearchParams(window.location.search);
 
   if (urlParams.get('ref') !== undefined) {
-    video.src = window.location.href + '/video/?q=' + urlParams.get('ref');
+    video.src = window.location.href + 'video/?q=' + urlParams.get('ref');
 
     video.load();
   }
