@@ -8,7 +8,9 @@ var resultsBox = document.getElementById('results-area');
 
 function search() {
   let t = searchBar.value;
-  
+
+  if (t === '') return errorBox.innerHTML = 'Cannot leave empty';
+
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
 
@@ -17,6 +19,7 @@ function search() {
     } else if (this.status == 404) {
       errorBox.innerHTML = 'Make a search and press go. Select an item from the list.';
     } else if (this.status == 437) {
+      hideWindow();
       errorBox.innerHTML = 'Cannot leave empty';
     }
   };

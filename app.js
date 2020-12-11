@@ -6,22 +6,19 @@ var app = express();
 app.use('/', express.static('static'));
 
 app.get('/video', function(req, res){
-
-   try {
-     ytdl(req.query.q)
-      .pipe(res);
-   } catch {
-     res.status(404).end();
-   }
+  try {
+    ytdl(req.query.q)
+    .pipe(res);
+  }
+  catch {
+    res.status(404).end();
+  }
 });
 
 app.get('/search', function(req, res) {
-  try {
-    ytsr(req.query.q, {limit: 20}).then(r => res.send(r));
-  } catch {
-    res.status(437).end()
-  }
-
+  ytsr(req.query.q, {limit: 20})
+    .then(r => res.send(r))
+    .catch(e => res.status(437).end());
 });
 
 
