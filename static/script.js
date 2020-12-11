@@ -1,10 +1,14 @@
 var video = document.getElementById('video-el');
 var itemsBox = document.getElementById('search-results');
 var errorBox = document.getElementsByClassName('err')[0];
+var searchBar = document.getElementById('search-bar');
+
+var resultsBox = document.getElementById('results-area');
 
 
 function search() {
-  let t = document.getElementById('search-bar').value;
+  let t = searchBar.value;
+  
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
 
@@ -17,7 +21,7 @@ function search() {
     }
   };
 
-  document.getElementById('results-area').innerHTML = 'Loading results...';
+  resultsBox.innerHTML = 'Loading results...';
   showWindow();
   xhttp.open("GET", "./search?q=" + t, true);
   xhttp.send();
@@ -48,7 +52,7 @@ function showResults(result) {
 
 
   }
-  document.getElementById('results-area').innerHTML = resultsHTML;
+  resultsBox.innerHTML = resultsHTML;
 
 }
 
