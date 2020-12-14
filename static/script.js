@@ -8,7 +8,8 @@ var resultsBox = document.getElementById('results-area');
 
 function search() {
   let t = searchBar.value;
-
+  
+  // Make sure search box is empty. This is also handled on the server but client side does it first to increase performance.
   if (t === '') return errorBox.innerHTML = 'Cannot leave empty';
 
   var xhttp = new XMLHttpRequest();
@@ -16,28 +17,29 @@ function search() {
 
     if (this.readyState == 4 && this.status == 200) {
       showResults(this.responseText);
-    } else if (this.status == 404) {
+    } else if (this.status == 404) { // To fix referral errors
       errorBox.innerHTML = 'Make a search and press go. Select an item from the list.';
-    } else if (this.status == 437) {
+    } else if (this.status == 437) { // Custom error code for empty search box.
       hideWindow();
       errorBox.innerHTML = 'Cannot leave empty';
     }
   };
-
-  resultsBox.innerHTML = 'Loading results...';
-  showWindow();
-  xhttp.open("GET", "./search?q=" + t, true);
+  
+  xhttp.open("GET", "./search?q=" + t, true); // Make request to server
   xhttp.send();
+  
+  resultsBox.innerHTML = 'Loading results...'; // To enhance UI
+  showWindow();
 }
 
-function showResults(result) {
+function showResults(result) { // Upon receiving results...
 
   result = JSON.parse(result);
 
   let resultsHTML = '';
 
   for (let key in result.items) {
-    if (result.items[key].type != 'video') continue;
+    if (result.items[key].type != 'video') continue; // Skip over any channels/playlists etc.
 
     resultsHTML += `<a href="${window.location.href.split('?')[0] + '?ref=' + result.items[key].link}">
       <div class='yt-result'>
@@ -51,7 +53,7 @@ function showResults(result) {
         <img class='result-img' src="${result.items[key].thumbnail}">
       </div>
       <hr>
-    </a>`;
+    </a>`; // Present the JSON cleanly
 
 
   }
@@ -69,10 +71,10 @@ function showWindow() {
   video.style.display = 'none';
 }
 
-document.body.onload = function () {
+document.body.onload = function () { // To access videos cleanly from referral and from selecting from search results
   const urlParams = new URLSearchParams(window.location.search);
 
-  if (urlParams.get('ref') !== undefined) {
+  if (urlParams.get('ref') !== undefined) { 
     video.src = window.location.href.split('?')[0] + 'video/?q=' + urlParams.get('ref');
 
     video.load();
