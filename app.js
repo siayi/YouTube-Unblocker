@@ -7,8 +7,8 @@ app.use('/', express.static('static'));
 
 app.get('/video', function(req, res){
   try {
-    ytdl(req.query.q)
-    .pipe(res);
+    ytdl(req.query.q) 
+    .pipe(res); // Download and pipe response to the client.
   }
   catch {
     res.status(404).end();
@@ -17,8 +17,8 @@ app.get('/video', function(req, res){
 
 app.get('/search', function(req, res) {
   ytsr(req.query.q, {limit: 20})
-    .then(r => res.send(r))
-    .catch(e => res.status(437).end());
+    .then(r => res.send(r)) // Send the search results to client.
+    .catch(e => res.status(437).end()); // If any errors send custom error code to client to handle itself.
 });
 
 
