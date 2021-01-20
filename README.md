@@ -4,11 +4,7 @@ A simple YouTube proxy and client for viewing YouTube videos in blocked/restrict
 
 You can use a running example here:
 
-- https://jayhal.es/yt-proxy/
-
-or if that isn't working, here:
-
-- http://jayhal.es:3000
+- https://youtube-proxy3.herokuapp.com/
 
 ## Functionality
 - Searching for videos
