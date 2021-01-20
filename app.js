@@ -7,7 +7,8 @@ app.use('/', express.static('static'));
 
 app.get('/video', function(req, res){
   try {
-    var ytRsp = ytdl(req.query.q).pipe(res);
+    res.writeHead(200, {'Content-Type': 'video/mp4'});
+    ytdl(req.query.q).pipe(res);
   }
   catch {
     res.status(404).end();
