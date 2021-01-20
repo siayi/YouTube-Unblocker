@@ -7,10 +7,7 @@ app.use('/', express.static('static'));
 
 app.get('/video', function(req, res){
   try {
-
-    var ytRsp = ytdl(req.query.q).catch(e => console.log(e));
-
-    ytRsp.pipe(res); // Download and pipe response to the client.
+    var ytRsp = ytdl(req.query.q).pipe(res);
   }
   catch {
     res.status(404).end();
