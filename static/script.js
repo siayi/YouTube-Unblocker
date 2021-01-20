@@ -9,6 +9,10 @@ var resultsBox = document.getElementById('results-area');
 function search() {
   let t = searchBar.value;
   
+  if (t.startsWith("https://") || t.startsWith("www")) {
+    return window.location = window.location.href.split('?')[0] + '?ref=' + t;
+  }
+  
   // Make sure search box is empty. This is also handled on the server but client side does it first to increase performance.
   if (t === '') return errorBox.innerHTML = 'Cannot leave empty';
 
