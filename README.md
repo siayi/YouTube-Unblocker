@@ -14,5 +14,4 @@ You can use a running example here:
 
 ## What it does not do (currently)
 - Use correct headers when sending data (Planned)
-- Use HTTPS (Unplanned)
 - Choose the location which the proxy should be geographically located (Unplanned)
