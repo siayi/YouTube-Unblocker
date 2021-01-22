@@ -10,7 +10,7 @@ You can use a running example here:
 - Searching for videos
 - Streams over connection rather than download
 - No ads
-- Bypasses fire walls
+- Bypasses firewalls
 
 ## What it does not do (currently)
 - Use correct headers when sending data (Planned)
