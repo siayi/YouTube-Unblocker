@@ -1,28 +1,29 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>YouTube Unblocker</title>
-  </head>
-  <body>
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+<body>
 
     <div id="search-results">
-      <span id="cross" onclick="hideWindow();">x</span>
-      <div id="results-area"></div>
+        <span id="cross" onclick="hideWindow();">x</span>
+        <div id="results-area"></div>
     </div>
 
     <div id="search-div">
-      <input type="text" name="search" value="" placeholder="Enter search term..." id="search-bar">
+        <input type="text" name="search" value="" placeholder="Enter search term..." id="search-bar">
 
-      <button name="button" onclick="search();">Go</button><br>
+        <button name="button" onclick="search();">Go</button><br>
     </div>
     <p class="err"></p>
     <video src="" autoplay controls id="video-el"></video>
-    <p>Right click and press save video to download.</p>
-  </body>
+    <a href="" id="download-button" download="">Download</a>
+</body>
 
-  <script type="text/javascript" src="script.js"></script>
+
 </html>

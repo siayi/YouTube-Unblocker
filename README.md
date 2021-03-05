@@ -13,5 +13,4 @@ You can use a running example here:
 - Bypasses firewalls
 
 ## What it does not do (currently)
-- Use correct headers when sending data (Planned)
 - Choose the location which the proxy should be geographically located (Unplanned)
