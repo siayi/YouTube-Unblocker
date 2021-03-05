@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "ytdl-core": "^4.4.3",
+    "ytdl-core": "^4.5.0",
     "ytsr": "^2.0.0-alpha.4"
   }
 }
