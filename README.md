@@ -1,6 +1,6 @@
 # NodeJS YouTube Unblocker
 
-A simple YouTube proxy and client for viewing YouTube videos in blocked/restricted networks. Makes use of the `ytdl-core` and `ytsr` npm packages. 
+A simple YouTube proxy and client for viewing YouTube videos in blocked/restricted networks. Makes use of the `ytdl-core` and `ytsr` npm packages. Effectively just a wrapper for these packages. 
 
 You can use a running example here:
 
