@@ -1,16 +1,30 @@
 {
-  "name": "yt-unblocker",
+  "name": "youtube-unblocker",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple YouTube proxy and client for viewing YouTube videos in blocked/restricted networks. Makes use of the `ytdl-core` and `ytsr` npm packages. It is effectively just a wrapper for these packages.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "",
+  "author": "Jay Hales",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "ytdl-core": "^4.5.0",
     "ytsr": "^2.0.0-alpha.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayHales/YouTube-Unblocker.git"
+  },
+  "keywords": [
+    "youtube",
+    "unblocker",
+    "proxy"
+  ],
+  "bugs": {
+    "url": "https://github.com/JayHales/YouTube-Unblocker/issues"
+  },
+  "homepage": "https://github.com/JayHales/YouTube-Unblocker#readme"
 }
