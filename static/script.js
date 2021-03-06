@@ -80,7 +80,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 if (urlParams.get('ref') !== undefined) {
     video.src = window.location.href.split('?')[0] + 'video/?q=' + urlParams.get('ref');
-    downloadButton.href = video.src;
+    downloadButton.href = window.location.href.split('?')[0] + 'download/?q=' + urlParams.get('ref');
     video.load();
 }
 
