@@ -14,4 +14,4 @@ You can use a running example here:
 - Download videos with one click
 
 ## Note:
-This only *streams* the video, the download also only streams. Therefore, skipping and scrubbing are not supported. The only fix to this would be to fully download the video before sending it to the user. Although this could be desireable it puts the server running the code at risk of massive downloads and also decreases performance. If you make these changes feel free to make a PR though and I can put it on another branch.
+This only *streams* the video. Therefore, skipping and scrubbing in the browser are not supported. Download the video instead if you want to skip/scrub/speed up.
